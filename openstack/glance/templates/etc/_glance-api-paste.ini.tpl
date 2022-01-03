@@ -22,18 +22,6 @@ pipeline = cors healthcheck http_proxy_to_wsgi versionnegotiation osprofiler aut
 [pipeline:glance-api-keystone+cachemanagement]
 pipeline = cors healthcheck http_proxy_to_wsgi versionnegotiation osprofiler authtoken context {{ if .Values.watcher.enabled }}watcher{{ end }} {{ if .Values.sapcc_rate_limit.enabled }}rate_limit{{ end }} {{ if .Values.audit.enabled }}audit{{ end }} cache cachemanage rootapp
 
-# Use this pipeline for authZ only. This means that the registry will treat a
-# user as authenticated without making requests to keystone to reauthenticate
-# the user.
-[pipeline:glance-api-trusted-auth]
-pipeline = cors healthcheck http_proxy_to_wsgi versionnegotiation osprofiler context rootapp
-
-# Use this pipeline for authZ only. This means that the registry will treat a
-# user as authenticated without making requests to keystone to reauthenticate
-# the user and uses cache management
-[pipeline:glance-api-trusted-auth+cachemanagement]
-pipeline = cors healthcheck http_proxy_to_wsgi versionnegotiation osprofiler context cache cachemanage rootapp
-
 [pipeline:apiversions]
 pipeline = http_proxy_to_wsgi apiversionsapp
 
@@ -84,8 +72,6 @@ paste.filter_factory = glance.api.middleware.gzip:GzipMiddleware.factory
 
 [filter:osprofiler]
 paste.filter_factory = osprofiler.web:WsgiMiddleware.factory
-hmac_keys = SECRET_KEY  #DEPRECATED
-enabled = yes  #DEPRECATED
 
 [filter:cors]
 paste.filter_factory =  oslo_middleware.cors:filter_factory
