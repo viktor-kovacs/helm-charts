@@ -9,7 +9,7 @@ groups:
       tier: net
       service: apic
       dashboard: apic-health
-      playbook: /docs/devops/alert/network/aci.html#APIC_endpoints_check
+      playbook: /docs/devops/alert/network/aci#APIC_endpoints_check
     annotations:
       description: "{{ $labels.hostname }} doesn't deliver HTTP success anymore."
       summary: "APIC http endpoint doesn't deliver HTTP success anymore."
@@ -21,7 +21,7 @@ groups:
       tier: net
       service: apic
       dashboard: apic-health
-      playbook: /docs/devops/alert/network/aci.html#APIC_endpoints_check
+      playbook: /docs/devops/alert/network/aci#APIC_endpoints_check
     annotations:
       description: "All APICs http endpoints are down or do not deliver 200 more than 15 minutes"
       summary: "All APICs http endpoints are down more than 15 minutes"
@@ -33,7 +33,7 @@ groups:
       tier: moni
       service: apic
       dashboard: apic-health
-      playbook: /docs/devops/alert/network/aci.html#APIC_endpoints_check
+      playbook: /docs/devops/alert/network/aci#APIC_endpoints_check
     annotations:
       description: "APICs http endpoints metric is missing"
       summary: "APICs http endpoints metric is missing - alerting is broken"

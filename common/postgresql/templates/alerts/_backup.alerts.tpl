@@ -22,7 +22,7 @@ groups:
       service: {{ include "alerts.service" . }}
       severity: info
       tier: {{ required ".Values.alerts.tier missing" .Values.alerts.tier }}
-      playbook: docs/support/playbook/db_backup_issues.html
+      playbook: docs/support/playbook/db_backup_issues
     annotations:
       description: The last successful database backup for {{`{{ $labels.app }}`}} is {{`{{ $value }}`}} hours old.
       summary: Database Backup too old
@@ -36,7 +36,7 @@ groups:
       service: {{ include "alerts.service" . }}
       severity: warning
       tier: {{ required ".Values.alerts.tier missing" .Values.alerts.tier }}
-      playbook: docs/support/playbook/db_backup_issues.html
+      playbook: docs/support/playbook/db_backup_issues
     annotations:
       description: The last successful database backup for {{`{{ $labels.app }}`}} is {{`{{ $value }}`}} hours old.
       summary: Database Backup too old

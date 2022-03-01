@@ -9,7 +9,7 @@ groups:
       service: alertmanager
       severity: critical
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/failed_config_reload.html'
+      playbook: 'docs/support/playbook/prometheus/failed_config_reload'
       meta: 'Alertmanager {{`{{ $labels.alertmanager }}`}} failed to load it`s configuration.'
     annotations:
       description: 'Alertmanager {{`{{ $labels.alertmanager }}`}} failed to load it`s configuration. Alertmanager cannot start with a malformed configuration.'
@@ -23,7 +23,7 @@ groups:
       service: alertmanager
       severity: warning
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/alertmanager_failed_notifications.html'
+      playbook: 'docs/support/playbook/prometheus/alertmanager_failed_notifications'
       meta: 'Alertmanager {{`{{ $labels.alertmanager }}`}} failing sending notifications.'
     annotations:
       description: 'Alertmanager {{`{{ $labels.alertmanager }}`}} is failing to send notifications for integration {{`{{ $labels.integration }}`}}.'
@@ -37,7 +37,7 @@ groups:
       service: alertmanager
       severity: warning
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/alertmanager_cluster_failures.html'
+      playbook: 'docs/support/playbook/prometheus/alertmanager_cluster_failures'
       meta: 'Alertmanager {{`{{ $labels.alertmanager }}`}} failing sending notifications.'
     annotations:
       description: 'Alertmanager {{`{{ $labels.alertmanager }}`}} fails to synchronize with other Alertmanagers of the HA cluster. This can cause duplicate notifications.'

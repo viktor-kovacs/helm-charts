@@ -9,7 +9,7 @@ groups:
       tier: os
       service: snmp
       context: snmp
-      playbook: /docs/devops/alert/network/not-yet-existing.html
+      playbook: /docs/devops/alert/network/not-yet-existing
     annotations:
       description: "TEST ALERT - PLEASE IGNORE - The number of metrics for devices of type `{{ $labels.module }}` got less - this should be checked"
       summary: "TEST ALERT - PLEASE IGNORE - targets check alert"
@@ -21,7 +21,7 @@ groups:
       tier: os
       service: snmp
       context: snmp
-      playbook: /docs/devops/alert/network/not-yet-existing.html
+      playbook: /docs/devops/alert/network/not-yet-existing
     annotations:
       description: "TEST ALERT - PLEASE IGNORE - The snmp exporter for the `{{ $labels.module }}` device `{{ $labels.server_name }}` does not send any metrics - this should be checked"
       summary: "TEST ALERT - PLEASE IGNORE - snmp exporer check targets"
@@ -33,7 +33,7 @@ groups:
       tier: os
       service: snmp
       context: snmp
-      playbook: /docs/devops/alert/network/not-yet-existing.html
+      playbook: /docs/devops/alert/network/not-yet-existing
     annotations:
       description: "The n9k/aci snmp exporter does not get any metrics for module `{{ $labels.module }}`. `{{ $value }}` devices are affected."
       summary: "The n9k snmp exporter check n9k targets"

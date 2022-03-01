@@ -9,7 +9,7 @@ groups:
         service: prometheus
         severity: info
         tier: {{ include "alerts.tier" . }}
-        playbook: 'docs/support/playbook/prometheus/thanos_compaction.html'
+        playbook: 'docs/support/playbook/prometheus/thanos_compaction'
         meta: 'Thanos compaction for Prometheus {{`{{ $labels.prometheus }}`}} halted.'
       annotations:
         description: 'Thanos compaction has failed to run and now is halted for Prometheus {{`{{ $labels.prometheus }}`}}. Long term storage queries will be slower.'
@@ -22,7 +22,7 @@ groups:
         service: prometheus
         severity: info
         tier: {{ include "alerts.tier" . }}
-        playbook: 'docs/support/playbook/prometheus/thanos_compaction.html'
+        playbook: 'docs/support/playbook/prometheus/thanos_compaction'
         meta: 'Thanos compact is failing compaction for Prometheus {{`{{ $labels.prometheus }}`}}'
       annotations:
         description: 'Thanos Compact is failing compaction for Prometheus {{`{{ $labels.prometheus }}`}}. Long term storage queries will be slower.'
@@ -35,7 +35,7 @@ groups:
         service: prometheus
         severity: info
         tier: {{ include "alerts.tier" . }}
-        playbook: 'docs/support/playbook/prometheus/thanos_compaction.html'
+        playbook: 'docs/support/playbook/prometheus/thanos_compaction'
         meta: 'Thanos Compact bucket operations are failing for Prometheus {{`{{ $labels.prometheus }}`}}'
       annotations:
         description: 'Thanos Compact bucket operations are failing for Prometheus {{`{{ $labels.prometheus }}`}}. Long term storage queries will be slower.'
@@ -48,7 +48,7 @@ groups:
         service: prometheus
         severity: info
         tier: {{ include "alerts.tier" . }}
-        playbook: 'docs/support/playbook/prometheus/thanos_compaction.html'
+        playbook: 'docs/support/playbook/prometheus/thanos_compaction'
         meta: 'Thanos compaction not run in 24h for Prometheus {{`{{ $labels.prometheus }}`}}.'
       annotations:
         description: 'Thanos Compaction has not been run in 24 hours for Prometheus {{`{{ $labels.prometheus }}`}}. Long term storage queries will be slower.'
@@ -62,7 +62,7 @@ groups:
         service: prometheus
         severity: info
         tier: {{ include "alerts.tier" . }}
-        playbook: 'docs/support/playbook/prometheus/thanos_compaction.html'
+        playbook: 'docs/support/playbook/prometheus/thanos_compaction'
         meta: 'Thanos compaction not running for Prometheus {{`{{ $labels.prometheus }}`}}.'
       annotations:
         description: 'Thanos Compaction is not running for Prometheus {{`{{ $labels.prometheus }}`}}. Long term storage queries will be slower.'

@@ -9,7 +9,7 @@ groups:
       tier: vmware
       service: vrops-exporter
       meta: "`https://{{ $labels.target }}` API is down. Monitoring of the vCenter and NSX-T is no longer available."
-      playbook: docs/devops/alert/vcenter/vrops.html#vrops_api_down
+      playbook: docs/devops/alert/vcenter/vrops#vrops_api_down
     annotations:
       description: "`https://{{ $labels.target }}` API is down. Monitoring of the vCenter and NSX-T is no longer available."
       summary: "`https://{{ $labels.target }}` API is down. Monitoring of the vCenter and NSX-T is no longer available."
@@ -59,7 +59,7 @@ groups:
       tier: vmware
       service: vcenter adapter
       meta: "The vCenter adapter for https://vrops-{{ $labels.vcenter }} is not receiving data. {{ $labels.recommendation_2 }}"
-      playbook: docs/devops/alert/vcenter/vrops.html#revalidatecertificate
+      playbook: docs/devops/alert/vcenter/vrops#revalidatecertificate
       no_alert_on_absence: "true"
     annotations:
       description: "The vCenter adapter for https://vrops-{{ $labels.vcenter }} is not receiving data. {{ $labels.recommendation_2 }}"
@@ -72,7 +72,7 @@ groups:
       tier: vmware
       service: vcenter adapter
       meta: "vROPs vCenter adapter is not receiving data for some objects. ({{ $labels.vcenter }}). {{ $labels.recommendation_2 }}"
-      playbook: docs/devops/alert/vcenter/vrops.html#revalidatecertificate
+      playbook: docs/devops/alert/vcenter/vrops#revalidatecertificate
       no_alert_on_absence: "true"
     annotations:
       description: "vROPs vCenter adapter is not receiving data for some objects. ({{ $labels.vcenter }}). {{ $labels.recommendation_2 }}"

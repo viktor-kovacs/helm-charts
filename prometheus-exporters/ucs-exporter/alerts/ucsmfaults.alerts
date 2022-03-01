@@ -21,7 +21,7 @@ groups:
       context: "{{ $labels.ucsm }}_{{ $labels.context }}"
       meta: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}: {{ $labels.description }} ({{ $labels.code }})"
       no_alert_on_absence: "true"
-      playbook: docs/devops/alert/baremetal/ucs.html
+      playbook: docs/devops/alert/baremetal/ucs
     annotations:
       description: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}: {{ $labels.description }} ({{ $labels.code }})"
       summary: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}"
@@ -36,7 +36,7 @@ groups:
       context: "{{ $labels.ucsm }}_{{ $labels.context }}"
       meta: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}: {{ $labels.description }} ({{ $labels.code }})"
       no_alert_on_absence: "true"
-      playbook: docs/devops/alert/baremetal/ucs.html
+      playbook: docs/devops/alert/baremetal/ucs
     annotations:
       description: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}: {{ $labels.description }} ({{ $labels.code }})"
       summary: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}"
@@ -51,7 +51,7 @@ groups:
       context: "{{ $labels.ucsm }}_{{ $labels.context }}"
       meta: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}: {{ $labels.description }} ({{ $labels.code }})"
       no_alert_on_absence: "true"
-      playbook: docs/devops/alert/baremetal/ucs.html
+      playbook: docs/devops/alert/baremetal/ucs
     annotations:
       description: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}: {{ $labels.description }} ({{ $labels.code }})"
       summary: "UCS Manager {{ $labels.server }} has an error with severity {{ $labels.severity }}"

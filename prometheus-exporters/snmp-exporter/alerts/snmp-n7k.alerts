@@ -10,7 +10,7 @@ groups:
       service: n7k
       context: "{{ $labels.devicename }}"
       meta: "Cisco N7k device `{{ $labels.devicename }}` NTP is not in sync for 15 min."
-      playbook: /docs/devops/alert/network/ntp.html
+      playbook: /docs/devops/alert/network/ntp
     annotations:
       description: "Cisco N7k device `{{ $labels.devicename }}` NTP is not in sync for 15 min."
       summary: "Cisco N7k  device `{{ $labels.devicename }}` NTP is not in sync for 15 min."

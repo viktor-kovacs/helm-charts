@@ -9,7 +9,7 @@ groups:
       service: elk
       severity: info
       tier: os
-      playbook: docs/support/playbook/elastic_kibana_issues.html#elasticpredictoutofdiskspace-alert
+      playbook: docs/support/playbook/elastic_kibana_issues#elasticpredictoutofdiskspace-alert
       dashboard: elasticsearch?var-cluster={{ $labels.elastic_cluster }}
     annotations:
       description: '*{{ $labels.region }}* The disk usage for node `{{ $labels.node }}` in cluster `{{ $labels.elastic_cluster }}` is above 90% now.
@@ -24,7 +24,7 @@ groups:
       service: elk
       severity: info
       tier: os
-      playbook: docs/support/playbook/elastic_kibana_issues.html#elasticpredictoutofdiskspace-alert
+      playbook: docs/support/playbook/elastic_kibana_issues#elasticpredictoutofdiskspace-alert
       dashboard: elasticsearch?var-cluster={{ $labels.elastic_cluster }}
     annotations:
       description: '*{{ $labels.region }}* The disk usage for node `{{ $labels.node }}` in cluster `{{ $labels.elastic_cluster }}` is above 80% now.
@@ -39,7 +39,7 @@ groups:
       service: elk
       severity: info
       tier: os
-      playbook: docs/support/playbook/elastic_kibana_issues.html
+      playbook: docs/support/playbook/elastic_kibana_issues
       dashboard: elasticsearch?var-cluster={{ $labels.elastic_cluster }}
     annotations:
       description: 'Elastic cluster *{{ $labels.elastic_cluster }}* in `{{ $labels.region }}` is RED. Please check all nodes.'
@@ -53,7 +53,7 @@ groups:
       service: elk
       severity: info
       tier: os
-      playbook: docs/support/playbook/elastic_kibana_issues.html
+      playbook: docs/support/playbook/elastic_kibana_issues
       dashboard: elasticsearch?var-cluster={{ $labels.elastic_cluster }}
     annotations:
       description: 'Elastic cluster *{{ $labels.elastic_cluster }}* in `{{ $labels.region }}` is YELLOW. Please check all nodes.
@@ -68,7 +68,7 @@ groups:
       service: elk
       severity: info
       tier: os
-      playbook: docs/support/playbook/elastic_kibana_issues.html
+      playbook: docs/support/playbook/elastic_kibana_issues
       dashboard: elasticsearch?var-cluster={{ $labels.elastic_cluster }}
     annotations:
       description: 'cluster *{{ $labels.elastic_cluster }}* es-exporter in `{{ $labels.region }}` is missing.'

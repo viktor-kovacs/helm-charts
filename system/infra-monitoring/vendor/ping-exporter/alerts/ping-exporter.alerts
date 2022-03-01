@@ -20,7 +20,7 @@ groups:
     labels:
       context: interconnect
       dashboard: network-interconnect-sli-overview
-      playbook: /docs/devops/alert/network/interconnect.html
+      playbook: /docs/devops/alert/network/interconnect
       meta: 'Datapath from {{ $labels.probed_from }} to {{ $labels.probed_to }} is down for 5 minutes'
       severity: info
       tier: net

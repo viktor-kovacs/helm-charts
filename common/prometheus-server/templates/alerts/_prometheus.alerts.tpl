@@ -9,7 +9,7 @@ groups:
       service: prometheus
       severity: critical
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/failed_config_reload.html'
+      playbook: 'docs/support/playbook/prometheus/failed_config_reload'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} failed to load it`s configuration.'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}} failed to load it`s configuration. Prometheus cannot start with a malformed configuration.'
@@ -23,7 +23,7 @@ groups:
       service: prometheus
       severity: warning
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/rule_evaluation.html'
+      playbook: 'docs/support/playbook/prometheus/rule_evaluation'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} failed to evaluate rules.'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}} failed to evaluate rules. Aggregation or alerting rules may not be loaded or provide false results.'
@@ -37,7 +37,7 @@ groups:
       service: prometheus
       severity: info
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/rule_evaluation.html'
+      playbook: 'docs/support/playbook/prometheus/rule_evaluation'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} rule evaluation is slow.'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}} rule evaluation is slow'
@@ -50,7 +50,7 @@ groups:
       service: prometheus
       severity: info
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/wal.html'
+      playbook: 'docs/support/playbook/prometheus/wal'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} has {{`{{ $value }}`}} WAL corruptions.'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}}  has {{`{{ $value }}`}} WAL corruptions.'
@@ -64,7 +64,7 @@ groups:
       service: prometheus
       severity: info
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/failed_tsdb_reload.html'
+      playbook: 'docs/support/playbook/prometheus/failed_tsdb_reload'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} failed to reload TSDB.'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}} had {{`{{$value | humanize}}`}} reload failures over the last four hours.'
@@ -78,7 +78,7 @@ groups:
       service: prometheus
       severity: info
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/failed_scrapes.html'
+      playbook: 'docs/support/playbook/prometheus/failed_scrapes'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} not ingesting samples.'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}} not ingesting samples. Aggregation or alerting rules may not be loaded or provide false results.'
@@ -92,7 +92,7 @@ groups:
       service: prometheus
       severity: info
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/failed_scrapes.html'
+      playbook: 'docs/support/playbook/prometheus/failed_scrapes'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} rejects many samples'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}} has many samples rejected due to duplicate timestamps but different values. This indicates metric duplication.'
@@ -105,7 +105,7 @@ groups:
       service: prometheus
       severity: info
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/failed_scrapes.html'
+      playbook: 'docs/support/playbook/prometheus/failed_scrapes'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} drops samples with out-of-order timestamps.'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}} has many samples rejected due to out-of-order timestamps.'
@@ -118,7 +118,7 @@ groups:
       service: prometheus
       severity: info
       tier: {{ include "alerts.tier" . }}
-      playbook: 'docs/support/playbook/prometheus/failed_scrapes.html'
+      playbook: 'docs/support/playbook/prometheus/failed_scrapes'
       meta: 'Prometheus {{`{{ $labels.prometheus }}`}} fails to scrape targets'
     annotations:
       description: 'Prometheus {{`{{ $labels.prometheus }}`}} has many scrapes that exceed the sample limit'
@@ -133,7 +133,7 @@ groups:
       tier: {{ include "alerts.tier" . }}
       service: prometheus
       severity: warning
-      playbook: docs/support/playbook/kubernetes/target_scraped_multiple_times.html
+      playbook: docs/support/playbook/kubernetes/target_scraped_multiple_times
       meta: 'Prometheus is scraping targets of job {{`{{ $labels.job }}`}} more than once.'
     annotations:
       description: Prometheus is scraping individual targets of the job `{{`{{ $labels.job }}`}}` more than once. This is likely caused due to incorrectly placed scrape annotations.  <https://{{ include "prometheus.externalURL" . }}/graph?g0.expr={{ urlquery `up * on(instance) group_left() (sum by(instance) (up{job="PLACEHOLDER"}) > 1)` | replace "PLACEHOLDER" "{{ $labels.job }}"}}|Affected targets>

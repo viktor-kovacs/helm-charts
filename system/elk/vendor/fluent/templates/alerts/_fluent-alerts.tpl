@@ -9,7 +9,7 @@ groups:
       service: elk
       severity: info
       tier: os
-      playbook: docs/support/playbook/elastic_kibana_issues.html#fluent-logs-are-missing
+      playbook: docs/support/playbook/elastic_kibana_issues#fluent-logs-are-missing
     annotations:
       description: 'ELK in {{`{{ $labels.region }}`}} {{`{{ $labels.kubernetes_pod_name }}`}} pod on {{`{{ $labels.nodename }}`}} is not shipping any log line. Please check'
       summary:  logstash log shipper missing check

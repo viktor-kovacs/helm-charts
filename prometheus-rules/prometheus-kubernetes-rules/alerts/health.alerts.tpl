@@ -12,7 +12,7 @@ groups:
       context: node
       meta: "{{`{{ $value }}`}} nodes NotReady"
       dashboard: kubernetes-health
-      playbook: docs/support/playbook/kubernetes/k8s_node_not_ready.html
+      playbook: docs/support/playbook/kubernetes/k8s_node_not_ready
     annotations:
       summary: Many Nodes are NotReady
       description: "{{`{{ $value }}`}} nodes are NotReady for more than an hour"
@@ -27,7 +27,7 @@ groups:
       context: node
       meta: "{{`{{ $labels.node }}`}} is NotReady"
       dashboard: nodes?var-server={{`{{$labels.node}}`}}
-      playbook: docs/support/playbook/kubernetes/k8s_node_not_ready.html
+      playbook: docs/support/playbook/kubernetes/k8s_node_not_ready
     annotations:
       summary: Node status is NotReady
       description: Node {{`{{ $labels.node }}`}} is NotReady for more than an hour
@@ -118,7 +118,7 @@ groups:
       tier: {{ required ".Values.tier missing" .Values.tier }}
       service: k8s
       severity: critical
-      playbook: docs/support/playbook/kubernetes/k8s-pods-not-ready-on-ready-node.html
+      playbook: docs/support/playbook/kubernetes/k8s-pods-not-ready-on-ready-node
     annotations:
       description: "{{`{{ humanizePercentage $value }}`}} of pods are ready on node {{`{{$labels.node}}`}}. This might by due to <https://github.com/kubernetes/kubernetes/issues/84931| kubernetes #84931>. In that case a restart of the kubelet is required."
       summary: "Less then 75% of pods ready on node"

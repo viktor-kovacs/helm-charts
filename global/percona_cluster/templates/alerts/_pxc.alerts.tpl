@@ -20,7 +20,7 @@
       service: {{ include "alerts.service" . }}
       severity: info
       tier: {{ required ".Values.alerts.tier missing" .Values.alerts.tier }}
-      playbook: 'docs/support/playbook/database/MariaDBSlowQueries.html'
+      playbook: 'docs/support/playbook/database/MariaDBSlowQueries'
     annotations:
       description: {{ include "fullName" . }} has reported slow queries. Please check the DB.
       summary: {{ include "fullName" . }} reports slow queries.
@@ -45,7 +45,7 @@
       service: {{ include "alerts.service" . }}
       severity: info
       tier: {{ required ".Values.alerts.tier missing" .Values.alerts.tier }}
-      playbook: 'docs/support/playbook/manila/mariadb_high_running_threads.html'
+      playbook: 'docs/support/playbook/manila/mariadb_high_running_threads'
     annotations:
       description: {{ include "fullName" . }} has more than 20 running threads.
       summary: {{ include "fullName" . }} running threads high.

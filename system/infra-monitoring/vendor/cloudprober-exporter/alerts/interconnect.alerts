@@ -11,7 +11,7 @@ groups:
       context: interconnect-dc
       dashboard: network-interconnect
       meta: 'Datacenter interconnect from {{ $labels.src }} in {{ $labels.probed_from }} to {{ $labels.dst }} in {{ $labels.probed_to }} is down'
-      playbook: 'docs/devops/alert/network/interconnect_dc.html'
+      playbook: 'docs/devops/alert/network/interconnect_dc'
     annotations:
       description: 'Datacenter interconnect from {{ $labels.src }} in {{ $labels.probed_from }} to {{ $labels.dst }} in {{ $labels.probed_to }} is down'
       summary: 'Datacenter interconnect from {{ $labels.src }} in {{ $labels.probed_from }} to {{ $labels.dst }} in {{ $labels.probed_to }} is down'
@@ -26,7 +26,7 @@ groups:
       context: interconnect-dc
       dashboard: network-interconnect
       meta: 'Datacenter interconnect from {{ $labels.probed_from }} to {{ $labels.probed_to }} is down'
-      playbook: 'docs/devops/alert/network/interconnect_dc.html'
+      playbook: 'docs/devops/alert/network/interconnect_dc'
     annotations:
       description: 'Datacenter interconnect from {{ $labels.probed_from }} to {{ $labels.probed_to }} is down'
       summary: 'Datacenter interconnect from {{ $labels.probed_from }} to {{ $labels.probed_to }} is down'
@@ -41,7 +41,7 @@ groups:
       context: interconnect-dc-node
       dashboard: network-interconnect
       meta: 'Datacenter interconnect from {{ $labels.probed_from }} / {{ $labels.src }} to {{ $labels.probed_to }} / {{ $labels.probe }} / {{$labels.dst }} is down'
-      playbook: 'docs/devops/alert/network/interconnect_dc.html'
+      playbook: 'docs/devops/alert/network/interconnect_dc'
     annotations:
       description: 'Datacenter interconnect from {{ $labels.probed_from }} / {{ $labels.src }} to {{ $labels.probed_to }} / {{ $labels.probe }} / {{$labels.dst }} is down'
       summary: 'Datacenter interconnect from {{ $labels.probed_from }} / {{ $labels.src }} to {{ $labels.probed_to }} / {{ $labels.probe }} / {{$labels.dst }} is down'
@@ -56,7 +56,7 @@ groups:
       context: interconnect-region
       dashboard: network-interconnect
       meta: 'Region interconnect from {{ $labels.src }} in {{ $labels.probed_from }} to {{ $labels.dst }} in {{ $labels.probed_to }} is down'
-      playbook: 'docs/devops/alert/network/interconnect_region.html'
+      playbook: 'docs/devops/alert/network/interconnect_region'
     annotations:
       description: 'Region interconnect from {{ $labels.src }} in {{ $labels.probed_from }} to {{ $labels.dst }} in {{ $labels.probed_to }} is down'
       summary: 'Region interconnect from {{ $labels.src }} in {{ $labels.probed_from }} to {{ $labels.dst }} in {{ $labels.probed_to }} is down'
@@ -71,7 +71,7 @@ groups:
       context: interconnect-region
       dashboard: network-interconnect
       meta: 'Region interconnect from {{ $labels.probed_from }} to {{ $labels.probed_to }} is down'
-      playbook: 'docs/devops/alert/network/interconnect_region.html'
+      playbook: 'docs/devops/alert/network/interconnect_region'
     annotations:
       description: 'Region interconnect from {{ $labels.probed_from }} to {{ $labels.probed_to }} is down'
       summary: 'Region interconnect from {{ $labels.probed_from }} to {{ $labels.probed_to }} is down'
@@ -86,7 +86,7 @@ groups:
       context: interconnect-region-node
       dashboard: network-interconnect
       meta: 'Region interconnect from {{ $labels.probed_from }} / {{ $labels.src }} to {{ $labels.probed_to }} / {{ $labels.probe }} / {{$labels.dst }} is down'
-      playbook: 'docs/devops/alert/network/interconnect_region.html'
+      playbook: 'docs/devops/alert/network/interconnect_region'
     annotations:
       description: 'Region interconnect from {{ $labels.probed_from }} / {{ $labels.src }} to {{ $labels.probed_to }} / {{ $labels.probe }} / {{$labels.dst }} is down'
       summary: 'Region interconnect from {{ $labels.probed_from }} / {{ $labels.src }} to {{ $labels.probed_to }} / {{ $labels.probe }} / {{$labels.dst }} is down'

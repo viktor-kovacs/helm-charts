@@ -8,7 +8,7 @@ groups:
       severity: info
       tier: os
       service: cinder
-      playbook: docs/support/playbook/cinder/cinder_reserved_percent_low.html
+      playbook: docs/support/playbook/cinder/cinder_reserved_percent_low
     annotations:
       description: 'Cinder backend {{ $labels.backend }}, pool {{ $labels.pool }}, shard {{ $labels.shard }}'
       summary: 'Cinder reserved percentage is low'
@@ -19,7 +19,7 @@ groups:
       severity: warning
       tier: os
       service: cinder
-      playbook: docs/support/playbook/cinder/cinder_reserved_percent_low.html
+      playbook: docs/support/playbook/cinder/cinder_reserved_percent_low
     annotations:
       description: 'Cinder backend {{ $labels.backend }}, shard {{ $labels.shard }}'
       summary: 'Cinder Shard reserved space available count warning'
@@ -30,7 +30,7 @@ groups:
       severity: warning
       tier: os
       service: cinder
-      playbook: docs/support/playbook/cinder/cinder_reserved_percent_low.html
+      playbook: docs/support/playbook/cinder/cinder_reserved_percent_low
     annotations:
       description: 'Cinder backend {{ $labels.backend }}, shard {{ $labels.shard }}'
       summary: 'Cinder Shard reserved space available count critical'
@@ -44,7 +44,7 @@ groups:
       service: cinder
       context: "openstack-exporter"
       meta: "Cinder backend {{ $labels.shard }}/{{ $labels.backend }} has no storage capacity."
-      playbook: docs/support/playbook/cinder/cinder_storage_profile_empty.html
+      playbook: docs/support/playbook/cinder/cinder_storage_profile_empty
     annotations:
       description: "Cinder backend {{ $labels.shard }}/{{ $labels.backend }} has no storage capacity."
       summary: "Cinder backend {{ $labels.shard }}/{{ $labels.backend }} has no storage capacity."

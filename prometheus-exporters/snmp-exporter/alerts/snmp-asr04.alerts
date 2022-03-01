@@ -10,7 +10,7 @@ groups:
       service: asr04
       context: "{{ $labels.component }}"
       meta: "Cisco ASR04 device `{{ $labels.devicename }}` NTP is not in sync for 15 min."
-      playbook: /docs/devops/alert/network/ntp.html
+      playbook: /docs/devops/alert/network/ntp
     annotations:
       description: "Cisco ASR04 device `{{ $labels.devicename }}` NTP is not in sync for 15 min."
       summary: "Cisco ASR04  device `{{ $labels.devicename }}` NTP is not in sync for 15 min."

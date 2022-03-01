@@ -13,7 +13,7 @@ groups:
       service: px
       context: px
       dashboard: px-switches-routing
-      playbook: docs/devops/alert/network/px .html#PXSwitchOspfNeighborDown
+      playbook: docs/devops/alert/network/px #PXSwitchOspfNeighborDown
     annotations:
       description: PX-Switch {{ $labels.devicename }} has at least one missing OSPF adjacency. Redundancy impaired.
       summary: PX-Switch {{ $labels.devicename }} has at least one missing OSPF adjacency. Redundancy impaired.

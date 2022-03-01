@@ -11,7 +11,7 @@ groups:
       severity: critical
       context: kubelet
       dashboard: kubernetes-health
-      playbook: docs/support/playbook/kubernetes/k8s_node_not_ready.html
+      playbook: docs/support/playbook/kubernetes/k8s_node_not_ready
     annotations:
       description: Many Kubelets are DOWN
       summary: More than 2 Kubelets are DOWN
@@ -26,7 +26,7 @@ groups:
       context: kubelet
       meta: "{{`{{ $labels.node }}`}}"
       dashboard: kubernetes-health
-      playbook: docs/support/playbook/kubernetes/k8s_node_not_ready.html
+      playbook: docs/support/playbook/kubernetes/k8s_node_not_ready
     annotations:
       description: Kublet on {{`{{ $labels.node }}`}} is DOWN.
       summary: A Kubelet is DOWN
@@ -40,7 +40,7 @@ groups:
       severity: warning
       context: kubelet
       dashboard: kubernetes-health
-      playbook: docs/support/playbook/kubernetes/k8s_node_scrape_missing.html
+      playbook: docs/support/playbook/kubernetes/k8s_node_scrape_missing
     annotations:
       description: Kubelets cannot be scraped. Status unknown.
       summary: Kubelets failed to be scraped.
