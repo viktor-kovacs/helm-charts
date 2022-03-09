@@ -1,0 +1,111 @@
+# Default values for placement
+# This is a YAML-formatted file.
+# Declare name/value pairs to be passed into your templates.
+# name: value
+global:
+  placementApiPortAdmin: '8778'
+  placementApiPortInternal: '8778'
+  placementApiPortPublic: '443'
+  dbUser: placement
+  placement_service_user: placement
+
+  osprofiler: {}
+
+osprofiler: {}
+
+use_tls_acme: true
+
+defaults:
+  default:
+    graceful_shutdown_timeout: 60
+
+pod:
+  replicas:
+    placement: 2
+  lifecycle:
+    upgrades:
+      deployments:
+        revision_history: 5
+        podReplacementStrategy: RollingUpdate
+        rollingUpdate:
+          maxUnavailable: 0
+          maxSurge: 1
+  debug:
+    api: false
+  resources:
+    placement:
+      requests:
+        cpu: "400m"
+        memory: "150Mi"
+
+portMetrics: '9102'
+
+uwsgi:
+  processes: 10
+  wsgi_file: "/var/lib/kolla/venv/bin/nova-placement-api"
+
+max_pool_size: 10
+max_overflow: 5
+
+postgresql:
+  enabled: false
+
+mariadb:
+  enabled: true
+  name: placement
+  
+audit:
+  enabled: false
+  # how many messages to buffer before dumping to log (when rabbit is down or too slow)
+  mem_queue_size: 1000
+  record_payloads: false
+  metrics_enabled: true
+
+
+logging:
+  formatters:
+    context:
+      class: oslo_log.formatters.ContextFormatter
+    default:
+      format: "%(message)s"
+  handlers:
+    stdout:
+      class: StreamHandler
+      args: "(sys.stdout,)"
+      formatter: context
+    "null":
+      class: logging.NullHandler
+      args: "()"
+      formatter: default
+    sentry:
+      class: raven.handlers.logging.SentryHandler
+      level: ERROR
+      args: "()"
+  loggers:
+    root:
+      handlers: stdout, sentry
+      level: WARNING
+    migrate:
+      handlers: stdout, sentry
+      level: INFO
+    nova:
+      handlers: stdout, sentry
+      level: INFO
+    eventlet.wsgi.server:
+      handlers: stdout, sentry
+      level: INFO
+
+# openstack-watcher-middleware
+watcher:
+  enabled: true
+
+# Deploy Sentry Prometheus alerts.
+alerts:
+  enabled: true
+  # Name of the Prometheus to which metrics should be exported
+  prometheus: openstack
+
+sentry:
+  enabled: true
+
+placement_conf: {}
