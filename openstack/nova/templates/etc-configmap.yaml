@@ -63,5 +63,7 @@ data:
       match_type: glob
       glob_disable_ordering: false
       ttl: 0 # metrics do not expire
+{{- if .Values.placement.enabled }}
   placement_uwsgi.ini: |
 {{ include (print .Template.BasePath "/etc/_placement_uwsgi.ini.tpl") . | indent 4 }}
+{{- end }}

@@ -56,6 +56,7 @@ spec:
     - interface: public
       region: '{{ .Values.global.region }}'
       url: 'https://{{include "nova_api_endpoint_host_public" .}}:{{.Values.global.novaApiPortPublic}}/v2/%(tenant_id)s'
+{{- if .Values.placement.enabled }}
   - name: placement
     type: placement
     description: Openstack Placement API
@@ -69,7 +70,7 @@ spec:
     - interface: public
       region: '{{ .Values.global.region }}'
       url: 'https://{{include "placement_api_endpoint_host_public" .}}:{{.Values.global.placementApiPortPublic}}'
-
+{{ end }}
   domains:
   - name: Default
     users:
