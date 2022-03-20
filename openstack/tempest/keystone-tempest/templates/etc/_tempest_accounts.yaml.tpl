@@ -8,6 +8,8 @@
   password: {{ .Values.tempestAdminPassword | quote }}
   tenant_name: 'tempest2'
   project_name: 'tempest2'
+  types:
+  - primary
 - username: 'admin'
   password: {{ .Values.tempestAdminPassword | quote }}
   tenant_name: 'admin'
