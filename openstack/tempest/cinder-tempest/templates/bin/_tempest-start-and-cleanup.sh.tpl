@@ -19,7 +19,7 @@ function cleanup_tempest_leftovers() {
     done
 
     for backup in $(openstack volume backup list -f value -c ID); do
-      openstack backup delete ${backup}
+      openstack volume backup delete ${backup}
     done
 
     for snapshot in $(openstack volume snapshot list -f value -c ID); do
