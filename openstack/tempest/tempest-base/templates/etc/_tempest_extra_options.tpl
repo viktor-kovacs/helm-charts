@@ -108,6 +108,7 @@ region = {{ .Values.global.region }}
 
 [validation]
 image_ssh_user = ccloud
+ssh_key_type = rsa
 
 [volume]
 catalog_type = volumev3
