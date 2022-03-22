@@ -37,6 +37,7 @@ function start_tempest_tests {
   # configure tempest verifier taking into account the auth section values provided in tempest_extra_options file
   # use config file from PRE_CONFIG STEP from /tmp directory
   rally --debug verify configure-verifier --extend /tmp/tempest_extra_options
+  rally --debug verify configure-verifier --show
   RALLY_EXIT_CODE=$(($RALLY_EXIT_CODE + $?))
   # run the actual tempest tests for neutron
   echo -e "\n === STARTING TEMPEST TESTS FOR {{ .Chart.Name }} === \n"
