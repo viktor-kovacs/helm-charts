@@ -12,7 +12,7 @@ function cleanup_tempest_leftovers() {
   export OS_PROJECT_NAME=tempest1
   export OS_TENANT_NAME=tempest1
 
-  for project in $(openstack project list --domain tempest | grep -E 'tempest-Domains' | awk '{ print $2 }'); do openstack project delete ${project}; done
+  for project in $(openstack project list --domain tempest | grep -oP "tempest-\w*[A-Z]+\w*"); do openstack project delete ${project}; done
   for domain in $(openstack domain list | grep -E 'tempest-test_domain' | awk '{ print $2 }'); do openstack domain set --disable ${domain}; openstack domain delete ${domain}; done
 
   export OS_USERNAME=admin
