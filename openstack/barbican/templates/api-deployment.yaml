@@ -118,6 +118,22 @@ spec:
               subPath: ratelimit.yaml
               readOnly: true
             {{- end }}
+        {{- if .Values.hsm.enabled }}
+            - name: luna
+              mountPath: /safenet/
+        - name: lunaclient
+          image: {{required ".Values.global.registry is missing" .Values.global.registry }}/loci-barbican:{{required "Values.hsm.luna.image is missing" .Values.hsm.luna.image }}
+          imagePullPolicy: IfNotPresent
+          command: [ "/bin/bash", "-c", "--" ]
+          args: [ "cp -R /usr/safenet/* /safenet/lunaclient/; while true; do sleep 30; done;" ]
+          volumeMounts:
+            - name: hsm
+              mountPath: /scripts/barbican_lunaclient.sh
+              subPath: barbican_lunaclient.sh
+              readOnly: true
+            - name: luna
+              mountPath: /safenet/
+        {{- end }}            
         - name: statsd
           {{- if hasKey .Values.global "dockerHubMirror"}}
           image: {{.Values.global.dockerHubMirror}}/{{ .Values.statsd.image.repository }}:{{ .Values.statsd.image.tag }}
@@ -152,4 +168,10 @@ spec:
           configMap:
             name: barbican-etc
         - name: etcbarbican
+          emptyDir: {}
+        - name: hsm
+          configMap:
+            name: barbican-etc
+            defaultMode: 0744
+        - name: luna
           emptyDir: {}

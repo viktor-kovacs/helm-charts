@@ -81,3 +81,20 @@ mem_queue_size = 1000
 [oslo_policy]
 
 policy_file = /etc/barbican/policy.yaml
+
+{{- if .Values.hsm.enabled }}
+[secretstore]
+namespace = barbican.secretstore.plugin
+enabled_secretstore_plugins = store_crypto
+
+[crypto]
+enabled_crypto_plugins = p11_crypto
+
+[p11_crypto_plugin]
+library_path = {{ .Values.lunaclient.conn.library_path }}
+login = {{ .Values.lunaclient.conn.login }}
+mkek_label = {{ .Values.lunaclient.conn.mkek_label }}
+mkek_length = {{ .Values.lunaclient.conn.mkek_length }}
+hmac_label = {{ .Values.lunaclient.conn.hmac_label }}
+slot_id = {{ .Values.lunaclient.conn.slot_id }}
+{{- end }}
